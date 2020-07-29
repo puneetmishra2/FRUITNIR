@@ -1,5 +1,5 @@
 # FRUITNIR
-A GUI and its realted functions for NIRS modelling of fruit (Especial methods to correct for batch effects)
+A GUI and its realted functions for NIRS modelling of fruit (Special methods to correct for batch effects)
 
 There are three ways to run this tool:
 1. If you have matlab then you can either install the app in the matlab environment (download this for app 'FRUITNIR.zip')
