@@ -1,0 +1,93 @@
+These are general modelling tips based on my experience with chemometrics and NIR spectroscopy data modelling:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+Extra tips and tricks 
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+A. Partial least square regression (PLSR)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+1. User should use the explained variance and error plot to decide on the optimal number of LVs 
+
+2. User may play with different pre-processing and their combination to attain a low number of LVs, this can be understood as the occurrence of inflection point at low number of LVs 
+
+3. In the case of NIRS of fruits, 2nd derivative pre-processing can reveal underlying peaks, thus, helping the PLSR to identity the optimal LVs 
+
+4. User should always look for least number of LVs to attain optimal models 
+
+5. User may use the regression vector to have an understanding about the key bands guiding the calibration 
+
+6. User should, for example in relation to properties like DM, explore if the bands with high weights in regression vector corresponds to the OH bond overtones  
+
+7. After testing on the new batch user should explore the prediction statistics such as RMSEP and bias and compare it with the calibration statistics, to get an indication of model performance on new batch 
+
+8. While loading the new batch user need not to worry about the pre-processing, as the same pre-processing selected for calibration set will be automatically applied to the test data 
+
+9. If the difference is too big (between calibration and testing between batches) then user should approach towards advanced methods such as variable selection with CovSel and batch correction with DOP and TCA. 
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+B. Key wavelengths selection with covariate selection (CovSel) 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+1. User should use the explained variance and cross-validation plot to decide on the number of variables to include in the final model 
+
+2. If multiple inflection points make the selection of optimal variable difficult, user may try calibrating with approximate number of variables and compare the results 
+
+3. The pre-processing should also be explored to lead to optimal selection of variables 
+
+4. Since, 2nd derivative can reveal the underlying peaks making the CovSel selection easier, user may explore the 2nd derivative pre-processing as the first option 
+
+5. After testing on the new batch user should explore the prediction statistics such as RMSEP and bias and compare it with the calibration statistics, to get an indication of model performance on new batch 
+
+6. User may also explore the performance of variable selection approach compared to the standard PLSR and note any improvement in prediction statistics 
+
+7. ‘Save prediction’ button will save both the predictions as well as the selected wavelengths 
+
+8. User may explore the selected wavelengths and double check if they carry chemical meaning such as if variable selection for predicting moisture content leads to a selection of wavelengths corresponding to OH bonds 
+
+9. CovSel can also be used with discrete response variable for variable selection 
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+C. Dynamic orthogonal projections (DOP)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+1. User may rotate the 3D surface plot to identify the minima points to select the EPO dimensions 
+
+2. If multiple minima points are identified user may explore the calibration statistics based on the EPO dimension corresponding to minimum error 
+
+3. When multiple minima are present user may select the EPO dimension for which a low number of LVs are obtained in cross-validation step 
+
+4. Once decided optimal number of LVs can be used for final calibration 
+
+5. New test data can be loaded for testing the model and the predictions can be saved with ‘save predictions’ button  
+
+6. User may explore the model performance with DOP correction compared to the standard PLSR and note any improvement in prediction statistics 
+
+7. Pre-processing might affect the performance, user may explore the pre-processing and compare the performances 
+
+8. DOP cannot be used if not extra references measurements on Batch 2 are available, in that case, user may use TCA 
+
+9. For DOP to work efficiently, the range of response variable in test set should be within the range of response variables of calibration set 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+D. Transfer component analysis (TCA)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+1. User may explore the explained variance and error plot to decide on the optimal number of LVs for final calibration 
+
+2. After testing on the new batch user should explore the prediction statistics such as RMSEP and bias and compare it with the calibration statistics, to get an indication of model performance on new batch 
+
+3. User may explore the model performance with TCA correction compared to the standard PLSR and note any improvement in prediction statistics 
+
+4. Pre-processing might affect the performance, user may explore the pre-processing and compare the performances 
+
+5. TCA is better for the cases when the distribution of calibration and test set is assumed to be similar 
+
+6. TCA is better when no reference measurements are available for performing the DOP 
