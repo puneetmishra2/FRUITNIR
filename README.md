@@ -8,6 +8,8 @@ There are three ways to run this tool:
 
 There is also an apple dataset which has been used in the article to demonstrate the toolbox and that can be downloaded from file ('Fruitnirs_dataset.zip')
 
+To download you need to click on the .zip files.
+
 Their is no password to download the toolbox, but once downloaded and installed, starting GUI requires password and that password is 'welovenirs' (without comma and all in lower case)
 
 In case of any doubt, problem in installation or suggestion to improve, just leave me an email at (puneet.mishra@wur.nl) or a message in LinkdeIn (https://www.linkedin.com/in/dr-puneet-mishra-73569142/)
