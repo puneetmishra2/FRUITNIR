@@ -2,9 +2,9 @@
 A GUI and its realted functions for NIRS modelling of fruit (Special methods to correct for batch effects)
 
 There are three ways to run this tool:
-1. If you have matlab then you can either install the app in the matlab environment (download this for app 'FRUITNIR.zip')
-2. You can download the fucntion and set the matlab to that folder and type T1 in the command window which will open the GUI (download this for functions 'Fruitnirs_functions.zip')
-3. If you do not have matlab and still want to run the app, then it can be done by installing free matlab runtime environment
+1. On a windows computer you can either install the app in the matlab environment or run it with MATLAB's runtime environment (download this for app 'FRUITNIR.zip')
+2. You can download the fucntion (for both Mac or windows) and set the MATLAB's to that folder and type T1 in the command window which will open the GUI (download this for functions 'Fruitnirs_functions.zip')
+
 
 There is also an apple dataset which has been used in the article to demonstrate the toolbox and that can be downloaded from file ('Fruitnirs_dataset.zip')
 
